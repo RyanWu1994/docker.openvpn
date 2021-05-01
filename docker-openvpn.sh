@@ -1,7 +1,8 @@
 #!/bin/bash
 
+IP = curl ifconfig.io
 # 請把後面的 udp 改成自己的網址或IP (例如:這邊IP是:107.167.184.138)
-docker-compose run --rm openvpn ovpn_genconfig -u udp://107.167.184.138
+docker-compose run --rm openvpn ovpn_genconfig -u udp://$IP
 # 需要輸入密碼以及一些設定值
 docker-compose run --rm openvpn ovpn_initpki
 
